@@ -1,0 +1,259 @@
+/* src/pages/Admin/AppointmentAnalytics.css */
+
+.analytics-container {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 24px;
+}
+
+@media (min-width: 768px) {
+  .analytics-container {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .analytics-container {
+    padding: 40px;
+  }
+}
+
+/* Header */
+.analytics-header {
+  margin-bottom: 32px;
+}
+
+.analytics-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.analytics-header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.stat-card-blue .stat-icon {
+  background: #dbeafe;
+}
+.stat-card-yellow .stat-icon {
+  background: #fef3c7;
+}
+.stat-card-green .stat-icon {
+  background: #d1fae5;
+}
+.stat-card-emerald .stat-icon {
+  background: #a7f3d0;
+}
+.stat-card-red .stat-icon {
+  background: #fecaca;
+}
+.stat-card-gray .stat-icon {
+  background: #e5e7eb;
+}
+
+.stat-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0 0 4px 0;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Revenue Grid */
+.revenue-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .revenue-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.revenue-card {
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.revenue-today {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.revenue-monthly {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.revenue-yearly {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.revenue-label {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0 0 8px 0;
+}
+
+.revenue-amount {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Charts Row */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  .charts-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Recent Section */
+.recent-section {
+  margin-bottom: 32px;
+}
+
+/* Loader */
+.analytics-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.analytics-loader p {
+  margin-top: 16px;
+  color: #64748b;
+}
+
+/* Error */
+.analytics-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.analytics-error h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.analytics-error p {
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+.retry-btn {
+  padding: 10px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.retry-btn:hover {
+  background: #2563eb;
+}

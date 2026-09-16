@@ -1,0 +1,209 @@
+/* src/pages/Admin/RecentAppointments.css */
+
+.recent-appointments-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.recent-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .recent-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.recent-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.recent-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .recent-controls {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .recent-controls {
+    width: auto;
+  }
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  flex: 1;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.appointments-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.appointments-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #475569;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.appointments-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #0f172a;
+}
+
+.appointments-table tbody tr {
+  transition: background 0.2s;
+}
+
+.appointments-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.patient-cell {
+  font-weight: 500;
+}
+
+.doctor-cell {
+  color: #475569;
+}
+
+.time-cell {
+  color: #475569;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.status-approved {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.status-completed {
+  background: #a7f3d0;
+  color: #047857;
+}
+
+.status-cancelled {
+  background: #fecaca;
+  color: #dc2626;
+}
+
+.status-rejected {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.status-default {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.no-appointments {
+  text-align: center;
+  padding: 40px 0;
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+/* Skeleton Loading */
+.recent-skeleton {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.recent-skeleton .skeleton-header {
+  height: 32px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  width: 30%;
+  margin-bottom: 16px;
+}
+
+.recent-skeleton .skeleton-row {
+  height: 48px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.recent-skeleton .skeleton-row:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

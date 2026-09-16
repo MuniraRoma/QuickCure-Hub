@@ -1,0 +1,117 @@
+/* MedicineAnalytics.css */
+/* একই রকমের ক্লাস ব্যবহার করা হয়েছে */
+
+.analytics-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.light-mode .analytics-card {
+  background: #ffffff;
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.analytics-card:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+}
+
+.analytics-card h4 {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.light-mode .analytics-card h4 {
+  color: #555;
+}
+
+.card-body .stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.card-body .stat-row .label {
+  color: #94a3b8;
+}
+.light-mode .card-body .stat-row .label {
+  color: #555;
+}
+
+.card-body .stat-row .value {
+  font-weight: bold;
+  color: #00e6ff;
+}
+.light-mode .card-body .stat-row .value {
+  color: #008c9e;
+}
+
+.sub-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.light-mode .sub-section {
+  border-top-color: #f0f0f0;
+}
+
+.sub-title {
+  margin: 0 0 8px 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.light-mode .sub-title {
+  color: #555;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 0.85rem;
+}
+
+.list-item .item-name {
+  color: #e2e8f0;
+}
+.light-mode .list-item .item-name {
+  color: #1a1a2e;
+}
+
+.list-item .item-count {
+  color: #00e6ff;
+  font-weight: 500;
+}
+.light-mode .list-item .item-count {
+  color: #008c9e;
+}
+
+.analytics-card.loading-state,
+.analytics-card.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  color: #94a3b8;
+}
+.light-mode .analytics-card.loading-state,
+.light-mode .analytics-card.empty-state {
+  color: #555;
+}

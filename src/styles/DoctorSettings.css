@@ -1,0 +1,404 @@
+/* =============================================
+   DoctorSettings.css
+   Dark & Light Mode Support
+   ============================================= */
+
+/* ----- Base & Reset ----- */
+.doctor-settings {
+  min-height: 100vh;
+  padding: 20px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.doctor-settings.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.doctor-settings.light-mode {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* ----- Loading Spinner ----- */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 15px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  font-size: 2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ----- Top Bar ----- */
+.settings-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.doctor-settings.dark-mode .settings-topbar {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.doctor-settings.light-mode .settings-topbar {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-left h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.topbar-left h2 svg {
+  color: #00e6ff;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.doctor-settings.dark-mode .back-btn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.doctor-settings.light-mode .back-btn {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.back-btn:hover {
+  transform: translateX(-3px);
+}
+
+.doctor-settings.dark-mode .back-btn:hover {
+  background: #475569;
+}
+
+.doctor-settings.light-mode .back-btn:hover {
+  background: #e2e8f0;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle,
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.doctor-settings.dark-mode .theme-toggle,
+.doctor-settings.dark-mode .lang-toggle {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.doctor-settings.light-mode .theme-toggle,
+.doctor-settings.light-mode .lang-toggle {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.doctor-settings.dark-mode .theme-toggle:hover,
+.doctor-settings.dark-mode .lang-toggle:hover {
+  background: #475569;
+}
+
+.doctor-settings.light-mode .theme-toggle:hover,
+.doctor-settings.light-mode .lang-toggle:hover {
+  background: #e2e8f0;
+}
+
+/* ----- Content Layout ----- */
+.settings-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----- Cards ----- */
+.settings-card {
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.doctor-settings.dark-mode .settings-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.doctor-settings.light-mode .settings-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid transparent;
+}
+
+.doctor-settings.dark-mode .card-header {
+  border-bottom-color: #334155;
+}
+
+.doctor-settings.light-mode .card-header {
+  border-bottom-color: #f1f5f9;
+}
+
+.card-header svg {
+  font-size: 1.25rem;
+  color: #00e6ff;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ----- Form Styles ----- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.doctor-settings.dark-mode .form-group input {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.doctor-settings.light-mode .form-group input {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.form-group input:focus {
+  border-color: #00e6ff;
+  box-shadow: 0 0 0 3px rgba(0, 230, 255, 0.15);
+}
+
+.form-group input.read-only {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.doctor-settings.dark-mode .form-group input.read-only {
+  background: #1a2332;
+}
+
+.doctor-settings.light-mode .form-group input.read-only {
+  background: #f1f5f9;
+}
+
+/* ----- Password Input Wrapper ----- */
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input-wrapper input {
+  padding-right: 48px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* ----- Messages (Error & Success) ----- */
+.error-msg,
+.success-msg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.error-msg {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.success-msg {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* ----- Buttons ----- */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00e6ff, #0088cc);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 230, 255, 0.35);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.submit-btn .spinner {
+  animation: spin 1s linear infinite;
+  font-size: 1rem;
+}
+
+/* ----- Responsive for Mobile ----- */
+@media (max-width: 640px) {
+  .settings-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .topbar-left {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .topbar-left h2 {
+    font-size: 1.2rem;
+  }
+
+  .topbar-right {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .settings-card {
+    padding: 16px;
+  }
+
+  .theme-toggle,
+  .lang-toggle {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
